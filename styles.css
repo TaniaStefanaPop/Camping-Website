@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap');
+
+:root{
+--header-height: 3.5rem;
+/*--------------Colors--------------*/
+--first-color: hsl(195, 100%, 30%);
+--gradient-color: linear-gradient(90deg,
+                  hsl(210, 55%, 20%),
+                  hsl(192, 62%, 25%));
+--title-color: hsl(210, 55%, 20%);
+--text-color: hsl(210, 24%, 15%);
+--body-color: hsl(210, 55%, 85%);
+/*--------------Font and Typography--------------*/
+--body-font: "Poppins", sans-serif;
+--second-font: "Lora'", serif;
+--biggest-font-size: 2.25rem;
+--normal-font-size: .938rem;
+--small-font-size: .813rem;
+/*--------------Font Weight--------------*/
+--font-regular: 400;
+--font-medium: 500;
+--font-semi-bold: 600;
+/*--------------Z Index--------------*/
+--z-tooltip: 10;
+--z-fixed: 100;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}   
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/*==================================== REUSABLE CSS CLASSES ====================================*/
+.container{
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+.main{
+    overflow: hidden; /* FOR ANIMATIONS*/
+}
+
+/*==================================== HEADER & NAV ====================================*/
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color);
+    z-index: var(--z-fixed);
+}
+.nav{
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.nav_logo{
+    width: 36px;
+
+}   
+.nav_toggle{
+    cursor: pointer;
+}
+.nav_close{
+    display: inline-flex;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+/* Navigation for mobile devices*/
+@media screen and (max-width: 1023px){
+    .nav_menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 1px 16px hsla(210, 55%, 24%, .1);
+        padding-block: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        transition: top .4s;
+    }
+}
+    .nav_list{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 2rem;
+    }
+    .nav_link{
+        color: var(--title-color);
+        transition: color .3s;
+    }
+    .nav_link:hover{
+        color: var(--first-color);
+    }
+    .nav_buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: .75rem;
+    }
+    .nav_button-link,
+    .nav_button-ghost{
+        display: inline-block;
+        color: var(--title-color);
+    }
+    .nav_button-ghost{
+        background-color: hsla(0, 0%, 100%, .3);
+        padding: 1rem 2.5rem;
+        border: 2px solid var(--title-color);
+        border-radius: .75rem;
+    }
+    .nav_close{
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+/* Show menu*/
+.show_menu{
+    top: 0;
+}
+/* Change Background Header*/
+.bg_header{
+    box-shadow: 0 1px 16px hsla(210, 55%, 24%, .12);
+}
+/*==================================== HOME ====================================*/
+.home{
+    position: relative;
+}
+.home_container{
+    padding-top: 8rem;
+    height: 100vh;
+}
+.home_content{
+    position: relative;
+    z-index: 2;
+}
+.home_data{
+    display: grid;
+    row-gap: .5rem;
+}
+.home_subtitle{
+    font-size: var(--small-font-size);
+    color: var(--first-color);
+    letter-spacing: 3px;
+}
+.home_title{
+    font-size: var(--biggest-font-size);
+    font-family: var(--second-font);
+    color: var(--title-color);
+}
+.home_description{
+    margin-bottom: 2.5rem;
+}
+.home_button{
+    display: inline-block;
+    background: var(--gradient-color);
+    color: white;
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: .75rem;
+    box-shadow: 0 24px 32px hsla(210, 54%, 24%, .3);
+}
+.home_bird-1,
+.home_bird-2{
+    position: absolute;
+    width: 60px;
+}
+.home_bird-1{
+    bottom: -6rem;
+    rotate: -30deg;
+}
+.home_bird-2{
+    top: 4.5rem;
+    right: 0;
+    rotate: -15deg;
+}
+.home_images{
+    z-index: 1;
+}
+.home_images img{
+    position: absolute;
+    max-width: initial;
+    width: 600px;
+    left: -7rem;
+    bottom: 0;
+}
+/*==================================== BREAKPOINTS ====================================*/
+/*---------For Small Devices---------*/
+@media screen and (max-width: 305px){
+    .container{
+        margin-inline: 1rem;
+    }
+    .home_title{
+        font-size: 2rem;
+    }
+}
+/*---------For Taller Devices--------*/
+@media screen and (min-width: 376px) and (min-height: 800px){
+    .home_container{
+        padding-top: 10rem;
+    }
+    .home_images img{
+        width: 700px;
+        left: -12rem;
+    }
+}
+/*---------For Medium Devices--------*/
+@media screen and (min-width: 480px){
+    .home_content{
+        max-width: 305px;
+    }
+    .home_bird-2{
+        right: -3rem;
+    }
+    .home_images img{
+        width: initial;
+        left: 0;
+    }
+}
+/*---------For Large Devices---------*/
+@media screen and (min-width: 1023px){
+    .nav{
+        height: calc(var(--header-height)+ 2rem);
+        column-gap: 4rem;
+    }
+    .nav_toggle,
+    .nav_close{
+        display: none;
+    }
+    .nav_menu{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nav_list{
+        flex-direction: row;
+        column-gap: 5rem;
+    }
+    .nav_buttons{
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+    .nav_logo{
+        width: 48px;
+    }
+    .home_content{
+        max-width: 550px;
+    }
+    .home_data{
+        row-gap: 1rem;
+    }
+    .home_subtitle{
+        font-size: var(--normal-font-size);
+    }
+    .home_description{
+        margin-bottom: 3rem;
+    }
+}
+@media screen and (min-width: 1120px){
+    .container{
+        margin-inline: auto;
+    }
+}
+@media screen and (min-width: 1300px){
+    .home_container{
+        height: 950px;
+        padding-top: 10rem;
+    }
+    .home_bird-1,
+    .home_bird-2{
+        width: 80px;
+    }
+    .home_bird-1{
+        bottom: -7rem;
+        left: -7rem;
+    }
+    .home_bird-2{
+        top: 0;
+        right: -6rem;
+    }
+    .home_images img{
+        bottom: -3rem;
+    }
+    ::-webkit-scrollbar{
+        width: .6rem;
+        border-radius: .5rem;
+        background-color: hsl(220, 24%, 15%);
+    }
+    ::-webkit-scrollbar-thumb{
+        border-radius: .5rem;
+        background-color: hsl(220, 24%, 25%);
+    }
+}
+/*-----For 2K Resolutions (2048 x 1152)-----*/
+@media screen and (min-width: 2048px){
+    .container{
+        max-width: 1300px;
+    }
+    .home_container{
+        height: 1200px;
+        padding-top: 15rem;
+
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Website</title>
+    <link rel="stylesheet" href="./styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"/>
+    <link rel="shortcut icon" href="./assets/favicon.png"/>
+    <meta name="theme-color" content="#db5945">
+</head>
+<body>
+    <!------------------------HEADER---------------------------->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav_logo">
+                <img src="./assets/logo.svg" alt="logo icon"/>
+            </a>
+            <div class="nav_menu" id="nav_menu">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Home</a>
+                    </li>
+    
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Pricing</a>
+                    </li>
+    
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Events</a>
+                    </li>
+    
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav_buttons">
+                    <a href="#" class="nav_button-link">Login</a>
+                    <a href="#" class="nav_button-ghost">Get Started</a>
+                </div>
+                <!---Close Button--->
+                <div class="nav_close" id="nav_close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <!---Toggle Button--->
+            <div class="nav_toggle" id="nav_toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+    <!--------------------------MAIN----------------------------->
+    <main class="main" id="main">
+        <!------------HOME----------->
+        <section class="home">
+            <div class="home_container container">
+                <div class="home_content">
+                    <div class="home_data">
+
+                        <h3 class="home_subtitle" id="home_subtitle">
+                            A LIFETIME EXPERIENCE
+                        </h3>
+
+                        <h1 class="home_title">
+                            Camping Events <br/>
+                            To Remember
+                        </h1>
+
+                        <p class="home_description">
+                            Camp anywhere anytime whitout hassle and enjoy.
+                        </p>
+
+                        <a href="3" class="home_button">
+                            Explore Locations
+                        </a>
+                    </div>
+
+                    <img src="./assets/bird-1.svg" alt="image" class="home_bird-1">
+                    <img src="./assets/bird-2.svg" alt="image" class="home_bird-2">
+                </div>
+                <div class="home_images">
+                    <img src="./assets/img-4.svg" alt="image" class="home_img-4">
+                    <img src="./assets/img-3.svg" alt="image" class="home_img-3">
+                    <img src="./assets/img-2.svg" alt="image" class="home_img-2">
+                    <img src="./assets/img-1.svg" alt="image" class="home_img-1">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!---------------------GSAP--------------------->
+    <script src="./gsap.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
